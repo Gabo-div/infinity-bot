@@ -6,7 +6,7 @@ module.exports = {
 	description: "Juega a la maquina tragamonedas con el bot",
 	alias: [],
 	async execute({ message, embed, args }) {
-		const amount = args[0] && parseInt(args[1]);
+		const amount = args[0] && parseInt(args[0]);
 
 		if (!amount) {
 			embed.setColor("#dc3545");
