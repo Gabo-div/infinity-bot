@@ -64,17 +64,17 @@ module.exports = {
 			{
 				name: "peach",
 				emoji: ":peach:",
-				points: 100,
+				points: 50,
 			},
 			{
 				name: "bell",
 				emoji: ":bell:",
-				points: 300,
+				points: 75,
 			},
 			{
 				name: "seven",
 				emoji: ":seven:",
-				points: 500,
+				points: 100,
 			},
 		];
 
@@ -97,22 +97,54 @@ module.exports = {
 				embed.setTitle("Tragamonedas 🎰");
 				embed.setFooter(`Jugador: ${message.author.username}`);
 
+				let reward;
+
 				if (
-					slotsResult[0].name === slotsResult[1].name ||
+					slotsResult[0].name === slotsResult[1].name &&
 					slotsResult[1].name === slotsResult[2].name
 				) {
+					//3 SLOTS
+					reward = amount * slotsResult[0].points;
+
 					embed.setColor("#28a745");
 					embed.setDescription(`El resultado es: \n
                     ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
-                    Haz ganado`);
+                    Haz ganado ${reward}`);
 
-					return message.channel.send({ embeds: [embed] });
+					message.channel.send({ embeds: [embed] });
+				} else if (
+					slotsResult[0].name === slotsResult[1].name ||
+					slotsResult[1].name === slotsResult[2].name
+				) {
+					//2 SLOTS
+					reward = amount * (slotsResult[0].points / 2);
+
+					embed.setColor("#28a745");
+					embed.setDescription(`El resultado es: \n
+                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
+                    Haz ganado **${reward}**`);
+
+					message.channel.send({ embeds: [embed] });
 				} else {
+					//1 SLOTS
 					embed.setColor("#28a745");
 					embed.setDescription(`El resultado es: \n
                     ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
                     Haz perdido`);
-					return message.channel.send({ embeds: [embed] });
+					message.channel.send({ embeds: [embed] });
+				}
+
+				if (reward) {
+					await User.findOneAndUpdate(
+						{
+							discordId: message.author.id,
+						},
+						{
+							$inc: {
+								coins: amount + reward,
+							},
+						}
+					);
 				}
 			} else {
 				embed.setColor("#dc3545");
