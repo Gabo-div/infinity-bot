@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const usersMap = new Map();
 const limit = 5;
-const time = 10000;
+const time = 120000;
 const diff = 60000;
 
 module.exports = async (message) => {
