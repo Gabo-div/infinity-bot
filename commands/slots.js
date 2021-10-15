@@ -95,8 +95,9 @@ module.exports = {
 				];
 
 				embed.setTitle("Tragamonedas 🎰");
-				embed.setDescription(`El resultado es: \n \n
-                    ${slotsResult[0]} |  ${slotsResult[1]} |  ${slotsResult[2]}
+				embed.setColor("#28a745");
+				embed.setDescription(`El resultado es: \n
+                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji}
                 `);
 				embed.setFooter(`Jugador: ${message.author.username}`);
 				return message.channel.send({ embeds: [embed] });

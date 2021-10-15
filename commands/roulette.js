@@ -110,7 +110,7 @@ module.exports = {
 					embed.setFooter(`Jugador: ${message.author.username}`);
 					return message.channel.send({ embeds: [embed] });
 				} else {
-					embed.setColor("#28a745");
+					embed.setColor("#dc3545");
 					embed.setTitle("Ruleta");
 					embed.setDescription(`
                         El resultado es ${result.emoji}\n\n Haz perdido
