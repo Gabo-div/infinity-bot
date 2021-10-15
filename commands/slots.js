@@ -49,32 +49,32 @@ module.exports = {
 			{
 				name: "mango",
 				emoji: ":mango:",
-				points: 5,
+				points: 4,
 			},
 			{
 				name: "grapes",
 				emoji: ":grapes:",
-				points: 10,
+				points: 5,
 			},
 			{
 				name: "tangerine",
 				emoji: ":tangerine:",
-				points: 15,
+				points: 10,
 			},
 			{
 				name: "peach",
 				emoji: ":peach:",
-				points: 25,
+				points: 15,
 			},
 			{
 				name: "bell",
 				emoji: ":bell:",
-				points: 30,
+				points: 20,
 			},
 			{
 				name: "seven",
 				emoji: ":seven:",
-				points: 50,
+				points: 25,
 			},
 		];
 
