@@ -15,7 +15,10 @@ module.exports = {
 				discordId: message.author.id,
 			});
 
-			const transactions = user.transactions.slice(-4, -1);
+			const transactions = user.transactions.slice(
+				-3,
+				user.transactions.length - 1
+			);
 
 			embed.setTitle(
 				`Ultimas transaciones de ${message.author.username}`
