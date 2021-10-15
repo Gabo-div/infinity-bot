@@ -67,6 +67,13 @@ module.exports = {
 							$inc: {
 								coins: -amount,
 							},
+							$push: {
+								transactions: {
+									from: message.author.id,
+									to: member.user.id,
+									amount: -amount,
+								},
+							},
 						}
 					);
 
@@ -75,6 +82,13 @@ module.exports = {
 						{
 							$inc: {
 								coins: amount,
+							},
+							$push: {
+								transactions: {
+									from: message.author.id,
+									to: member.user.id,
+									amount: amount,
+								},
 							},
 						}
 					);

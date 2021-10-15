@@ -23,9 +23,10 @@ const userSchema = new mongoose.Schema({
 		isPremiun: { type: Boolean, default: false },
 		expire: { type: Date, default: null },
 	},
-	bgUrl:{
+	bgUrl: {
 		type: String,
-		default: "https://res.cloudinary.com/infinity-bot/image/upload/v1634249773/default_bg.jpg",
+		default:
+			"https://res.cloudinary.com/infinity-bot/image/upload/v1634249773/default_bg.jpg",
 	},
 	level: {
 		type: Number,
@@ -39,6 +40,17 @@ const userSchema = new mongoose.Schema({
 		type: Number,
 		default: 0,
 	},
+	transactions: [
+		{
+			from: String,
+			to: String,
+			amount: Number,
+			date: {
+				type: Date,
+				default: Date.now(),
+			},
+		},
+	],
 });
 
 module.exports = mongoose.model("User", userSchema);
