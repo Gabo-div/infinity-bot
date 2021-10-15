@@ -118,7 +118,7 @@ module.exports = {
 					embed.setColor("#28a745");
 					embed.setDescription(`El resultado es: \n
                     ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
-                    Haz ganado ${reward}`);
+                    Haz ganado **${reward}**`);
 
 					message.channel.send({ embeds: [embed] });
 				} else if (
