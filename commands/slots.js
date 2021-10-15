@@ -136,7 +136,7 @@ module.exports = {
 					message.channel.send({ embeds: [embed] });
 				} else {
 					//1 SLOTS
-					embed.setColor("#28a745");
+					embed.setColor("#dc3545");
 					embed.setDescription(`El resultado es: \n
                     ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
                     Haz perdido`);
