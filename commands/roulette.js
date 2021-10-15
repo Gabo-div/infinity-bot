@@ -91,7 +91,8 @@ module.exports = {
 				const result = roulette[random(0, roulette.length - 1)];
 
 				if (result.color === color) {
-					const reward = color === "green" ? amount * 4 : amount * 2;
+					const reward =
+						color === "green" ? amount * 6 : amount * 1.5;
 
 					await User.findOneAndUpdate(
 						{ discordId: message.author.id },
