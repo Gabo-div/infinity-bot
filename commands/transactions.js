@@ -22,6 +22,7 @@ module.exports = {
 						`De: <@${trans.from}> \n Para: <@${trans.to}> \n Cantidad: ${trans.amount} \n Fecha: ${trans.date}\n\n `
 				)
 			);
+			return message.channel.send({ embeds: [embed] });
 		} catch (error) {
 			console.log(error);
 		}
