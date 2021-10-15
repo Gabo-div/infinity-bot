@@ -95,12 +95,25 @@ module.exports = {
 				];
 
 				embed.setTitle("Tragamonedas 🎰");
-				embed.setColor("#28a745");
-				embed.setDescription(`El resultado es: \n
-                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji}
-                `);
 				embed.setFooter(`Jugador: ${message.author.username}`);
-				return message.channel.send({ embeds: [embed] });
+
+				if (
+					slotsResult[0].name === slotsResult[1].name ||
+					slotsResult[1].name === slotsResult[2].name
+				) {
+					embed.setColor("#28a745");
+					embed.setDescription(`El resultado es: \n
+                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
+                    Haz ganado`);
+
+					return message.channel.send({ embeds: [embed] });
+				} else {
+					embed.setColor("#28a745");
+					embed.setDescription(`El resultado es: \n
+                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
+                    Haz perdido`);
+					return message.channel.send({ embeds: [embed] });
+				}
 			} else {
 				embed.setColor("#dc3545");
 				embed.setDescription("No tienes suficientes coins");
