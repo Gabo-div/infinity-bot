@@ -1,12 +1,12 @@
 const Discord = require("discord.js");
 const User = require("../schema/User");
 
-module.exports = async (message) => {
+module.exports = async (message, xp) => {
 	const { author } = message;
 
 	if (author.bot) return;
 
-	addXP(message, author, 2.5);
+	addXP(message, author, xp);
 };
 
 const addXP = async (message, author, xpToAdd) => {
@@ -26,7 +26,7 @@ const addXP = async (message, author, xpToAdd) => {
 			const newLevel = Math.floor(xp / 100);
 
 			if (newLevel > level) {
-				const reward = 60;
+				const reward = 100;
 
 				const updateUserLevel = await User.findOneAndUpdate(
 					{ discordId: author.id },
@@ -42,7 +42,7 @@ const addXP = async (message, author, xpToAdd) => {
 					.setTitle("Nuevo Nivel")
 					.setColor("#17a2b8")
 					.setDescription(
-						`Felicidades ${author} ahora eres nivel ${newLevel} \n Haz ganado **${reward} coins**`
+						`Felicidades ${author} ahora eres nivel ${newLevel} \n \n Haz ganado **${reward} coins**`
 					);
 				return message.channel.send({ embeds: [embedLevelUp] });
 			}

@@ -105,7 +105,7 @@ module.exports = {
 					embed.setColor("#28a745");
 					embed.setTitle("Ruleta");
 					embed.setDescription(`
-                        El resultado es ${result.emoji}\nHaz ganado ${reward}
+                        El resultado es ${result.emoji}\n\n Haz ganado **${reward}**
                     `);
 					embed.setFooter(`Jugador: ${message.author.username}`);
 					return message.channel.send({ embeds: [embed] });
@@ -113,7 +113,7 @@ module.exports = {
 					embed.setColor("#28a745");
 					embed.setTitle("Ruleta");
 					embed.setDescription(`
-                        El resultado es ${result.emoji}\nHaz perdido
+                        El resultado es ${result.emoji}\n\n Haz perdido
                     `);
 					embed.setFooter(`Jugador: ${message.author.username}`);
 					return message.channel.send({ embeds: [embed] });

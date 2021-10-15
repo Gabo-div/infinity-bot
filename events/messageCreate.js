@@ -9,14 +9,14 @@ const antiSpam = require("../features/antiSpam");
 module.exports = {
 	name: "messageCreate",
 	async execute(client, message) {
-		const Spam = await antiSpam(message);
-
-		if (!Spam) {
-			await user(null, message);
-			await xp(message);
-		}
-
 		const [validations] = ValidateCmds(message, guildOptions);
+
+		const cooldown = await antiSpam(message);
+
+		if (!cooldown || !validations.command) {
+			await user(null, message);
+			await xp(message, 2.5);
+		}
 
 		if (validations.bot || !validations.command || !validations.guild) {
 			return;
