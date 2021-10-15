@@ -17,10 +17,12 @@ module.exports = {
 				`Ultimas transaciones de ${message.author.username}`
 			);
 			embed.setDescription(
-				transactions.map(
-					(trans) =>
-						`De: <@${trans.from}> \n Para: <@${trans.to}> \n Cantidad: ${trans.amount} \n Fecha: ${trans.date}\n\n `
-				)
+				transactions
+					.map(
+						(trans) =>
+							`De: <@${trans.from}> \n Para: <@${trans.to}> \n Cantidad: ${trans.amount} \n Fecha: ${trans.date}\n\n `
+					)
+					.join("")
 			);
 			return message.channel.send({ embeds: [embed] });
 		} catch (error) {
