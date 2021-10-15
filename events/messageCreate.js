@@ -13,7 +13,7 @@ module.exports = {
 
 		const cooldown = await antiSpam(message);
 
-		if (!cooldown || !validations.command) {
+		if (!cooldown && !validations.command) {
 			await user(null, message);
 			await xp(message, 2.5);
 		}
