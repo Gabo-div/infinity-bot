@@ -1,6 +1,10 @@
 const Discord = require("discord.js");
 const User = require("../schema/User");
 
+const moment = require("moment");
+
+moment.locale("es");
+
 module.exports = {
 	name: "transactions",
 	description: "Mira tus ultimas transacciones",
@@ -16,11 +20,16 @@ module.exports = {
 			embed.setTitle(
 				`Ultimas transaciones de ${message.author.username}`
 			);
+			embed.setColor("#28a745");
 			embed.setDescription(
 				transactions
 					.map(
 						(trans) =>
-							`De: <@${trans.from}> \n Para: <@${trans.to}> \n Cantidad: ${trans.amount} \n Fecha: ${trans.date}\n\n `
+							`De: <@${trans.from}> \n Para: <@${
+								trans.to
+							}> \n Cantidad: ${trans.amount} \n Fecha: ${moment(
+								trans.date
+							).fromNow()}\n\n `
 					)
 					.join("")
 			);
