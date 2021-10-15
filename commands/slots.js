@@ -113,7 +113,7 @@ module.exports = {
 					slotsResult[1].name === slotsResult[2].name
 				) {
 					//3 SLOTS
-					reward = amount * slotsResult[0].points;
+					reward = amount * slotsResult[1].points;
 
 					embed.setColor("#28a745");
 					embed.setDescription(`El resultado es: \n
@@ -126,7 +126,7 @@ module.exports = {
 					slotsResult[1].name === slotsResult[2].name
 				) {
 					//2 SLOTS
-					reward = amount * (slotsResult[0].points / 2);
+					reward = amount * (slotsResult[1].points / 2);
 
 					embed.setColor("#28a745");
 					embed.setDescription(`El resultado es: \n
