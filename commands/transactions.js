@@ -29,7 +29,9 @@ module.exports = {
 								trans.to
 							}> \n Cantidad: ${trans.amount} \n Fecha: ${moment(
 								trans.date
-							).fromNow()}\n\n `
+							)
+								.utc()
+								.fromNow()}\n\n `
 					)
 					.join("")
 			);
