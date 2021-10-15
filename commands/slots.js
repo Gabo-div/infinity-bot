@@ -98,7 +98,7 @@ module.exports = {
 				embed.setDescription(`El resultado es: \n \n
                     ${slotsResult[0]} |  ${slotsResult[1]} |  ${slotsResult[2]}
                 `);
-				embed.setFooter(`Jugador: ${(message.author.userna, e)}`);
+				embed.setFooter(`Jugador: ${message.author.username}`);
 				return message.channel.send({ embeds: [embed] });
 			} else {
 				embed.setColor("#dc3545");
