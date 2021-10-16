@@ -56,7 +56,6 @@ module.exports = {
 
 			if (
 				ServerOptions.channels.casino &&
-				cmd.type &&
 				cmd.type === "casino" &&
 				ServerOptions.channels.casino !== message.channel.id
 			) {
@@ -66,10 +65,9 @@ module.exports = {
 				);
 				return message.channel.send({ embeds: [embed] });
 			} else if (
-				cmd.type &&
-				cmd.type !== "casino" &&
 				ServerOptions.channels.cmd &&
-				ServerOptions.channels.cmd !== message.channel.id
+				ServerOptions.channels.cmd !== message.channel.id &&
+				cmd.type !== "casino"
 			) {
 				embed.setColor("#dc3545");
 				embed.setDescription(
