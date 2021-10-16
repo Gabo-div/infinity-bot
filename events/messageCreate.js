@@ -73,9 +73,8 @@ module.exports = {
 				}
 
 				if (
+					casinoChannel !== currentChannel &&
 					cmdChannel &&
-					cmd.type !== "casino" &&
-					cmd.type !== "economy" &&
 					cmd.type !== "mod"
 				) {
 					if (currentChannel !== cmdChannel) {
