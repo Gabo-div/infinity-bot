@@ -5,6 +5,7 @@ module.exports = {
 	name: "slots",
 	description: "Juega a la maquina tragamonedas con el bot",
 	alias: [],
+	type: "casino",
 	async execute({ message, embed, args }) {
 		const amount = args[0] && parseInt(args[0]);
 

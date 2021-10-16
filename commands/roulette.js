@@ -5,6 +5,7 @@ module.exports = {
 	name: "roulette",
 	description: "Juega a la ruleta con el bot",
 	alias: [],
+	type: "casino",
 	async execute({ message, embed, args }) {
 		const color = args[0] && args[0].toLowerCase();
 
