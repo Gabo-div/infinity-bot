@@ -61,7 +61,7 @@ module.exports = {
 			) {
 				embed.setColor("#dc3545");
 				embed.setDescription(
-					`Solo recibo comandos de casino del canal <#${ServerOptions.channels.cmd}>`
+					`Solo recibo comandos de casino del canal <#${ServerOptions.channels.casino}>`
 				);
 				return message.channel.send({ embeds: [embed] });
 			} else if (
