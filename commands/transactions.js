@@ -15,7 +15,17 @@ module.exports = {
 				discordId: message.author.id,
 			});
 
+            if(user.transactions.length >= 20){
+                await User.findOneAndUpdate({discordId: message.author.id}, {
+                    $pop: {
+                        transactions: -1
+                    }
+                })
+            }
+
 			const transactions = user.transactions.slice(-3);
+
+            
 
 			embed.setTitle(
 				`Ultimas transaciones de ${message.author.username}`
