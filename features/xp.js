@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const User = require("../schema/User");
+const Server = require("../schema/Server");
 
 module.exports = async (message, xp) => {
 	const { author } = message;
@@ -38,13 +39,23 @@ const addXP = async (message, author, xpToAdd) => {
 					}
 				);
 
+				const { channels } = await User.findOne({
+					discordId: author.id,
+				});
+
 				const embedLevelUp = new Discord.MessageEmbed()
 					.setTitle("Nuevo Nivel")
 					.setColor("#17a2b8")
 					.setDescription(
 						`Felicidades ${author} ahora eres nivel ${newLevel} \n \n Haz ganado **${reward} coins**`
 					);
-				return message.channel.send({ embeds: [embedLevelUp] });
+
+				if (channels.level) {
+					const levelCh = client.channels.get(channels.level);
+					return levelCh.send({ embeds: [embedLevelUp] });
+				} else {
+					return message.channel.send({ embeds: [embedLevelUp] });
+				}
 			}
 		}
 	} catch (error) {

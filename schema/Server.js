@@ -10,6 +10,11 @@ const serverSchema = new mongoose.Schema({
 		type: String,
 		default: "&",
 	},
+	channels: {
+		cmd: String,
+		level: String,
+		casino: String,
+	},
 	premiun: {
 		isPremiun: { type: Boolean, default: false },
 		expire: { type: String, default: null },

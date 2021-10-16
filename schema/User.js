@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const moment = require("moment");
 
 const userSchema = new mongoose.Schema({
 	discordId: {
@@ -47,7 +48,7 @@ const userSchema = new mongoose.Schema({
 			amount: Number,
 			date: {
 				type: Date,
-				default: Date.now(),
+				default: moment().utc(),
 			},
 		},
 	],
