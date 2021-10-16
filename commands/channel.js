@@ -6,7 +6,7 @@ module.exports = {
 	description:
 		"Agrega un canal como predeterminado para niveles/comandos/casino",
 	alias: [],
-	execute({ message, embed, args }) {
+	async execute({ message, embed, args }) {
 		const channel = message.mentions.channels.first();
 		const type = args.slice(1).join("");
 
@@ -27,7 +27,7 @@ module.exports = {
 				return message.channel.send({ embeds: [embed] });
 			}
 
-			if (type !== "level" || type !== "commands" || type !== "casino") {
+			if (type !== "level" || type !== "cmd" || type !== "casino") {
 				embed.setColor("#dc3545");
 				embed.setDescription(
 					"Los tipos permitidos son level/commands/casino"
@@ -40,7 +40,7 @@ module.exports = {
 					serverdId: message.guild.id,
 				},
 				{
-					[`channel.${type}`]: channel.id,
+					[`channels.${type}`]: channel.id,
 				}
 			);
 
