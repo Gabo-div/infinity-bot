@@ -92,7 +92,7 @@ module.exports = {
 
 				if (result.color === color) {
 					const reward =
-						color === "green" ? amount * 6 : amount * 1.5;
+						color === "green" ? amount * 6 : amount * 1.75;
 
 					await User.findOneAndUpdate(
 						{ discordId: message.author.id },
