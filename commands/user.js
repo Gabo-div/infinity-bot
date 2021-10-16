@@ -4,6 +4,7 @@ module.exports = {
 	name: "user",
 	description: "Muestra información de un usuario",
 	alias: [],
+	type: "utility",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

@@ -9,23 +9,25 @@ module.exports = {
 	name: "transactions",
 	description: "Mira tus ultimas transacciones",
 	alias: [],
+	type: "economy",
 	async execute({ message, embed, args }) {
 		try {
 			const user = await User.findOne({
 				discordId: message.author.id,
 			});
 
-            if(user.transactions.length >= 20){
-                await User.findOneAndUpdate({discordId: message.author.id}, {
-                    $pop: {
-                        transactions: -1
-                    }
-                })
-            }
+			if (user.transactions.length >= 20) {
+				await User.findOneAndUpdate(
+					{ discordId: message.author.id },
+					{
+						$pop: {
+							transactions: -1,
+						},
+					}
+				);
+			}
 
 			const transactions = user.transactions.slice(-3);
-
-            
 
 			embed.setTitle(
 				`Ultimas transaciones de ${message.author.username}`

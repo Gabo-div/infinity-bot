@@ -4,6 +4,7 @@ module.exports = {
 	name: "ban",
 	description: "Banea a un usuario mencionado por un tiempo especifico",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const reason = args.slice(2).join(" ") || null;

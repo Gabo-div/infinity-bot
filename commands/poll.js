@@ -1,7 +1,8 @@
 module.exports = {
 	name: "poll",
-	description: "Dice un chiste aleatorio (Nunca son buenos)",
+	description: "Realiza una encuesta",
 	alias: [],
+	type: "fun",
 	execute({ message, embed, args }) {
 		const messageAnn = args.join(" ").split(" | ");
 

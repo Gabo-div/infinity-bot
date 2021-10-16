@@ -4,6 +4,7 @@ module.exports = {
 	name: "removerole",
 	description: "Remueve roles a un usuario",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const roles = args.slice(1);

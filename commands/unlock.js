@@ -4,6 +4,7 @@ module.exports = {
 	name: "unlock",
 	description: "Desbloquea un canal para el rol @everyone",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const channel = message.mentions.channels.first();
 

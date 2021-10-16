@@ -4,6 +4,7 @@ module.exports = {
 	name: "addrole",
 	description: "Añade roles a un usuario",
 	alias: [],
+	type: "mod",
 	async execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const roles = args.slice(1);

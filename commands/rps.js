@@ -2,6 +2,7 @@ module.exports = {
 	name: "rps",
 	description: "Juega piedra, papel y tijeras",
 	alias: [],
+	type: "fun",
 	execute({ message, embed, args }) {
 		const choices = ["Piedra", "Papel", "Tijeras"];
 		let result;

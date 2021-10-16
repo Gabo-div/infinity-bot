@@ -54,26 +54,38 @@ module.exports = {
 				embed,
 			};
 
-			if (
-				ServerOptions.channels.casino &&
-				cmd.type === "casino" &&
-				ServerOptions.channels.casino !== message.channel.id
-			) {
-				embed.setColor("#dc3545");
-				embed.setDescription(
-					`Solo recibo comandos de casino del canal <#${ServerOptions.channels.casino}>`
-				);
-				return message.channel.send({ embeds: [embed] });
-			} else if (
-				ServerOptions.channels.cmd &&
-				ServerOptions.channels.cmd !== message.channel.id &&
-				cmd.type !== "casino"
-			) {
-				embed.setColor("#dc3545");
-				embed.setDescription(
-					`Solo recibo comandos del canal <#${ServerOptions.channels.cmd}>`
-				);
-				return message.channel.send({ embeds: [embed] });
+			if (ServerOptions.channels) {
+				const currentChannel = message.channel.id;
+				const cmdChannel = ServerOptions.channels.cmd;
+				const casinoChannel = ServerOptions.channels.casino;
+
+				if (casinoChannel) {
+					if (
+						cmd.type === "casino" &&
+						casinoChannel !== currentChannel
+					) {
+						embed.setColor("#dc3545");
+						embed.setDescription(
+							`Solo recibo comandos de casino del canal <#${ServerOptions.channels.casino}>`
+						);
+						return message.channel.send({ embeds: [embed] });
+					}
+				}
+
+				if (
+					cmdChannel &&
+					cmd.type !== "casino" &&
+					cmd.type !== "economy" &&
+					cmd.type !== "mod"
+				) {
+					if (currentChannel !== cmdChannel) {
+						embed.setColor("#dc3545");
+						embed.setDescription(
+							`Solo recibo comandos del canal <#${ServerOptions.channels.cmd}>`
+						);
+						return message.channel.send({ embeds: [embed] });
+					}
+				}
 			}
 
 			if (cmd) await cmd.execute(cmdAttributes);

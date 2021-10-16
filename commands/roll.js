@@ -4,6 +4,7 @@ module.exports = {
 	name: "roll",
 	description: "Responde con un número aleatorio",
 	alias: [],
+	type: "fun",
 	execute({ message, embed, args }) {
 		const number = isNaN(parseInt(args[0])) ? 100 : parseInt(args[0]);
 

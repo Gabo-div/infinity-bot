@@ -5,6 +5,7 @@ module.exports = {
 	name: "coins",
 	description: "Muestra tu cantidad de coins y los puedes enviar a alguien",
 	alias: [],
+	type: "economy",
 	async execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const amount = args.slice(1).join(" ")

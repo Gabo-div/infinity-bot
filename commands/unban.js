@@ -4,6 +4,7 @@ module.exports = {
 	name: "unban",
 	description: "Desbanea a un usuario por su id",
 	alias: [],
+	type: "mod",
 	async execute({ message, embed, args }) {
 		const memberId = args[0];
 		const reason = args.slice(1).join(" ");

@@ -2,6 +2,7 @@ module.exports = {
 	name: "8ball",
 	description: "Da una respuesta aleatoria",
 	alias: [],
+	type: "fun",
 	execute({ message, embed, args }) {
 		const replies = [
 			"Si",

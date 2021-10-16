@@ -6,6 +6,7 @@ module.exports = {
 	name: "unmute",
 	description: "Quita el silencio de un usuario en los canales de texto",
 	alias: [],
+	type: "mod",
 	async execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

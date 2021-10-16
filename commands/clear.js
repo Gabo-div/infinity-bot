@@ -4,6 +4,7 @@ module.exports = {
 	name: "clear",
 	description: "Elimina una cantidad de mensajes especificada",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

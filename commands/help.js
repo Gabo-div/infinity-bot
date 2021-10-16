@@ -5,6 +5,7 @@ module.exports = {
 	name: "help",
 	description: "Muestra una lista de los comandos disponibles",
 	alias: [],
+	type: "utility",
 	execute({ message, client, args }) {
 		const embeds = [];
 

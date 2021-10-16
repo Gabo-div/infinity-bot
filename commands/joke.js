@@ -2,6 +2,7 @@ module.exports = {
 	name: "joke",
 	description: "Dice un chiste aleatorio (Nunca son buenos)",
 	alias: [],
+	type: "fun",
 	execute({ message, embed, args }) {
 		const joke = ["* racismo *"];
 

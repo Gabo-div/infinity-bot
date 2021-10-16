@@ -7,6 +7,7 @@ module.exports = {
 	name: "profile",
 	description: "Muestra tu perfil de usuario del bot",
 	alias: [],
+	type: "utility",
 	async execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

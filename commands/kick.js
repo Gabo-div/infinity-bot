@@ -4,6 +4,7 @@ module.exports = {
 	name: "kick",
 	description: "Le da kick a un usuario mencionado",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const reason = args.slice(1).join(" ") || null;

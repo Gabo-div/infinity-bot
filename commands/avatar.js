@@ -4,6 +4,7 @@ module.exports = {
 	name: "avatar",
 	description: "Muestra el avatar de un usuario",
 	alias: [],
+	type: "utility",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

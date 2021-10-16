@@ -4,6 +4,7 @@ module.exports = {
 	name: "nick",
 	description: "Cambia el apodo de un usuario",
 	alias: [],
+	type: "utility",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const nick = args.slice(1).join(" ");

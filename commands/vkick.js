@@ -4,6 +4,7 @@ module.exports = {
 	name: "vkick",
 	description: "Desconecta a un usuario del canal de voz donde esté",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 

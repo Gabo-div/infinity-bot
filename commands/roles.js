@@ -6,6 +6,7 @@ module.exports = {
 	name: "roles",
 	description: "Muestra los roles del servidor",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		embed.setColor("#28a745");
 		embed.setTitle("Roles");

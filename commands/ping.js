@@ -2,6 +2,7 @@ module.exports = {
 	name: "ping",
 	description: "Muetra la latencia",
 	alias: [],
+	type: "utility",
 	execute({ message, client, embed }) {
 		embed.setColor("#28a745");
 		embed.setTitle("Latencia");

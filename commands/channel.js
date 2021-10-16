@@ -6,6 +6,7 @@ module.exports = {
 	description:
 		"Agrega un canal como predeterminado para niveles/comandos/casino",
 	alias: [],
+	type: "mod",
 	async execute({ message, embed, args }) {
 		const channel = message.mentions.channels.first();
 		const type = args.slice(1).join("");

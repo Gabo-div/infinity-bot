@@ -4,6 +4,7 @@ module.exports = {
 	name: "lock",
 	description: "Bloquea un canal para el rol @everyone",
 	alias: [],
+	type: "mod",
 	execute({ message, embed, args }) {
 		const channel = message.mentions.channels.first();
 

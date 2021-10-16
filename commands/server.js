@@ -6,8 +6,8 @@ module.exports = {
 	name: "server",
 	description: "Muestra la información del servidor",
 	alias: [],
+	type: "utility",
 	execute({ message, embed, args }) {
-
 		const createdDate = moment(message.guild.createdTimestamp).fromNow();
 
 		embed.setColor("#28a745");

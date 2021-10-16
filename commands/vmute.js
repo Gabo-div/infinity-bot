@@ -6,6 +6,7 @@ module.exports = {
 	name: "vmute",
 	description: "Silencia a un usuario en los canales de voz",
 	alias: [],
+	type: "mod",
 	async execute({ message, embed, args }) {
 		const member = message.mentions.members.first();
 		const time = args[1] || "10m";

@@ -5,6 +5,7 @@ module.exports = {
 	name: "github",
 	description: "Muestra información de un repositorio en github",
 	alias: [],
+	type: "utility",
 	async execute({ message, embed, args }) {
 		const search = args[0];
 		const githubApi = `https://api.github.com/repos/${search}`;
