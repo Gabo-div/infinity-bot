@@ -26,7 +26,7 @@ const addXP = async (message, author, xpToAdd) => {
 			const newLevel = Math.floor(xp / 100);
 
 			if (newLevel > level) {
-				const reward = 100;
+				const reward = 120;
 
 				const updateUserLevel = await User.findOneAndUpdate(
 					{ discordId: author.id },
