@@ -30,7 +30,7 @@ module.exports = {
 			if (type !== "level" || type !== "cmd" || type !== "casino") {
 				embed.setColor("#dc3545");
 				embed.setDescription(
-					"Los tipos permitidos son level/commands/casino"
+					"Los tipos permitidos son level/cmd/casino"
 				);
 				return message.channel.send({ embeds: [embed] });
 			}
