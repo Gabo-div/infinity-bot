@@ -66,6 +66,8 @@ module.exports = {
 				);
 				return message.channel.send({ embeds: [embed] });
 			} else if (
+				cmd.type &&
+				cmd.type !== "casino" &&
 				ServerOptions.channels.cmd &&
 				ServerOptions.channels.cmd !== message.channel.id
 			) {
