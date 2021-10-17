@@ -1,10 +1,10 @@
 const Server = require("../schema/Server");
 
-module.exports = async (guild) => {
-	createServer(guild.id);
+module.exports = async (client, guild) => {
+	createServer(client, guild.id);
 };
 
-const createServer = async (id) => {
+const createServer = async (client, id) => {
 	try {
 		const newServer = new Server({
 			serverId: id,

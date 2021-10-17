@@ -15,6 +15,9 @@ const serverSchema = new mongoose.Schema({
 		level: String,
 		casino: String,
 	},
+	commands: {
+		type: Object,
+	},
 	premiun: {
 		isPremiun: { type: Boolean, default: false },
 		expire: { type: String, default: null },
