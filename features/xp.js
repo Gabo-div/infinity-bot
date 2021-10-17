@@ -2,15 +2,15 @@ const Discord = require("discord.js");
 const User = require("../schema/User");
 const Server = require("../schema/Server");
 
-module.exports = async (message, xp) => {
+module.exports = async (client, message, xp) => {
 	const { author } = message;
 
 	if (author.bot) return;
 
-	addXP(message, author, xp);
+	addXP(client, message, author, xp);
 };
 
-const addXP = async (message, author, xpToAdd) => {
+const addXP = async (client, message, author, xpToAdd) => {
 	try {
 		const addUserXP = await User.findOneAndUpdate(
 			{ discordId: author.id },

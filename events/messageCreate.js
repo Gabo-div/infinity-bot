@@ -22,7 +22,7 @@ module.exports = {
 
 			if (!cooldown && !validations.command) {
 				await user(null, message);
-				await xp(message, 2.5);
+				await xp(client, message, 2.5);
 			} else if (!cooldown && validations.command) {
 				await user(null, message);
 				await xp(message, 0.5);
