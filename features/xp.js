@@ -39,7 +39,7 @@ const addXP = async (message, author, xpToAdd) => {
 					}
 				);
 
-				const { channels } = await User.findOne({
+				const serverOptions = await User.findOne({
 					discordId: author.id,
 				});
 
@@ -50,7 +50,7 @@ const addXP = async (message, author, xpToAdd) => {
 						`Felicidades ${author} ahora eres nivel ${newLevel} \n \n Haz ganado **${reward} coins**`
 					);
 
-				if (channels.level) {
+				if (serverOptions.channels && serverOptions.channels.level) {
 					const levelCh = client.channels.get(channels.level);
 					return levelCh.send({ embeds: [embedLevelUp] });
 				} else {
