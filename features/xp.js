@@ -39,7 +39,7 @@ const addXP = async (message, author, xpToAdd) => {
 					}
 				);
 
-				const serverOptions = await User.findOne({
+				const serverOptions = await Server.findOne({
 					discordId: author.id,
 				});
 
