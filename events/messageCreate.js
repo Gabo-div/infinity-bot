@@ -25,7 +25,7 @@ module.exports = {
 				await xp(client, message, 2.5);
 			} else if (!cooldown && validations.command) {
 				await user(null, message);
-				await xp(message, 0.5);
+				await xp(client, message, 0.5);
 			}
 
 			if (validations.bot || !validations.command || !validations.guild) {
