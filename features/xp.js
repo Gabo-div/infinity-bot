@@ -51,7 +51,9 @@ const addXP = async (client, message, author, xpToAdd) => {
 					);
 
 				if (serverOptions.channels && serverOptions.channels.level) {
-					const levelCh = client.channels.get(channels.level);
+					const levelCh = client.channels.cache.get(
+						serverOptions.channels.level
+					);
 					return levelCh.send({ embeds: [embedLevelUp] });
 				} else {
 					return message.channel.send({ embeds: [embedLevelUp] });
