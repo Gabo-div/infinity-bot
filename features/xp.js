@@ -40,7 +40,7 @@ const addXP = async (client, message, author, xpToAdd) => {
 				);
 
 				const serverOptions = await Server.findOne({
-					discordId: author.id,
+					discordId: message.guild.id,
 				});
 
 				const embedLevelUp = new Discord.MessageEmbed()
