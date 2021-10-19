@@ -33,44 +33,39 @@ module.exports = {
 
 		let slots = [
 			{
-				name: "banana",
-				emoji: ":banana:",
-				points: 3,
-			},
-			{
 				name: "blueberries",
 				emoji: ":blueberries:",
-				points: 4,
+				points: 2,
 			},
 			{
 				name: "mango",
 				emoji: ":mango:",
-				points: 5,
+				points: 3,
 			},
 			{
 				name: "grapes",
 				emoji: ":grapes:",
-				points: 7,
+				points: 5,
 			},
 			{
 				name: "tangerine",
 				emoji: ":tangerine:",
-				points: 10,
+				points: 7,
 			},
 			{
 				name: "peach",
 				emoji: ":peach:",
-				points: 20,
+				points: 10,
 			},
 			{
 				name: "bell",
 				emoji: ":bell:",
-				points: 30,
+				points: 20,
 			},
 			{
 				name: "seven",
 				emoji: ":seven:",
-				points: 40,
+				points: 30,
 			},
 		];
 
@@ -112,9 +107,9 @@ module.exports = {
 					reward = amount * slotsResult[1].points;
 
 					embed.setColor("#28a745");
-					embed.setDescription(`El resultado es: \n
-                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
-                    Haz ganado **${reward}**`);
+					embed.setDescription(
+						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz ganado **${reward}**`
+					);
 
 					message.channel.send({ embeds: [embed] });
 				} else if (
@@ -125,17 +120,17 @@ module.exports = {
 					reward = amount * (slotsResult[1].points / 2);
 
 					embed.setColor("#28a745");
-					embed.setDescription(`El resultado es: \n
-                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
-                    Haz ganado **${reward}**`);
+					embed.setDescription(
+						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz ganado **${reward}**`
+					);
 
 					message.channel.send({ embeds: [embed] });
 				} else {
 					//1 SLOTS
 					embed.setColor("#dc3545");
-					embed.setDescription(`El resultado es: \n
-                    ${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \n
-                    Haz perdido`);
+					embed.setDescription(
+						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz perdido`
+					);
 					message.channel.send({ embeds: [embed] });
 				}
 
