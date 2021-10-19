@@ -33,29 +33,24 @@ module.exports = {
 
 		let slots = [
 			{
-				name: "lemon",
-				emoji: ":lemon:",
-				points: 1,
-			},
-			{
 				name: "banana",
 				emoji: ":banana:",
-				points: 2,
+				points: 3,
 			},
 			{
 				name: "blueberries",
 				emoji: ":blueberries:",
-				points: 3,
+				points: 4,
 			},
 			{
 				name: "mango",
 				emoji: ":mango:",
-				points: 4,
+				points: 5,
 			},
 			{
 				name: "grapes",
 				emoji: ":grapes:",
-				points: 5,
+				points: 7,
 			},
 			{
 				name: "tangerine",
@@ -65,17 +60,17 @@ module.exports = {
 			{
 				name: "peach",
 				emoji: ":peach:",
-				points: 15,
+				points: 20,
 			},
 			{
 				name: "bell",
 				emoji: ":bell:",
-				points: 20,
+				points: 30,
 			},
 			{
 				name: "seven",
 				emoji: ":seven:",
-				points: 25,
+				points: 40,
 			},
 		];
 
@@ -151,7 +146,7 @@ module.exports = {
 						},
 						{
 							$inc: {
-								coins: amount + reward,
+								coins: reward,
 							},
 						}
 					);

@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const usersMap = new Map();
 const time = 120000;
-const diff = 60000;
+const diff = 30000;
 
 module.exports = async (message) => {
 	if (message.author.bot) return;
@@ -10,7 +10,7 @@ module.exports = async (message) => {
 	let cooldown;
 
 	if (usersMap.has(message.author.id)) {
-		const userData = usersMap.get(message.author.id);
+		let userData = usersMap.get(message.author.id);
 		const { lastMessage, timer } = userData;
 		const difference =
 			message.createdTimestamp - lastMessage.createdTimestamp;
@@ -18,7 +18,6 @@ module.exports = async (message) => {
 		if (difference > diff) {
 			clearTimeout(timer);
 
-			userData.msgCount = 1;
 			userData.lastMessage = message;
 			userData.timer = setTimeout(() => {
 				usersMap.delete(message.author.id);
@@ -31,12 +30,11 @@ module.exports = async (message) => {
 			cooldown = true;
 		}
 	} else {
-		let fn = setTimeout(() => {
-			usersMap.delete(message.author.id);
-		}, time);
 		usersMap.set(message.author.id, {
 			lastMessage: message,
-			time: fn,
+			time: setTimeout(() => {
+				usersMap.delete(message.author.id);
+			}, time),
 		});
 
 		cooldown = false;

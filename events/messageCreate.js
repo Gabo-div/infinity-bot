@@ -22,10 +22,10 @@ module.exports = {
 
 			if (!cooldown && !validations.command) {
 				await user(null, message);
-				await xp(client, message, 2.5);
+				await xp(client, message, 4);
 			} else if (!cooldown && validations.command) {
 				await user(null, message);
-				await xp(client, message, 0.5);
+				await xp(client, message, 2);
 			}
 
 			if (validations.bot || !validations.command || !validations.guild) {
@@ -54,7 +54,7 @@ module.exports = {
 				embed,
 			};
 
-			if(!cmd) return;
+			if (!cmd) return;
 
 			if (ServerOptions.channels) {
 				const currentChannel = message.channel.id;
