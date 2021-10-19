@@ -40,14 +40,14 @@ const addXP = async (client, message, author, xpToAdd) => {
 				);
 
 				const serverOptions = await Server.findOne({
-					discordId: message.guild.id,
+					serverId: message.guild.id,
 				});
 
 				const embedLevelUp = new Discord.MessageEmbed()
 					.setTitle("Nuevo Nivel")
 					.setColor("#17a2b8")
 					.setDescription(
-						`Felicidades ${author} ahora eres nivel ${newLevel} \n \n Haz ganado **${reward} coins**`
+						`Felicidades ${author} ahora eres nivel ${newLevel} \n\nHaz ganado **${reward} coins**`
 					);
 
 				if (serverOptions.channels && serverOptions.channels.level) {
