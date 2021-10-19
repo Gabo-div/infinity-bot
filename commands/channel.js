@@ -45,10 +45,12 @@ module.exports = {
 				}
 			);
 
-			embed.setColor("#28a745");
-			embed.setDescription(
-				`El canal ${channel} ha sido configurado como canal de ${type}`
-			);
+			// embed.setColor("#28a745");
+			// embed.setDescription(
+			// 	`El canal ${channel} ha sido configurado como canal de ${type}`
+			// );
+
+			embed.setDescription(message.guild.id);
 			return message.channel.send({ embeds: [embed] });
 		} else {
 			embed.setColor("#dc3545");
