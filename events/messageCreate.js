@@ -54,6 +54,8 @@ module.exports = {
 				embed,
 			};
 
+			if(!cmd) return;
+
 			if (ServerOptions.channels) {
 				const currentChannel = message.channel.id;
 				const cmdChannel = ServerOptions.channels.cmd;
@@ -87,7 +89,7 @@ module.exports = {
 				}
 			}
 
-			if (cmd) await cmd.execute(cmdAttributes);
+			await cmd.execute(cmdAttributes);
 		} catch (error) {
 			console.log(error);
 			embed.setTitle("Error");
