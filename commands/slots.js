@@ -108,7 +108,7 @@ module.exports = {
 
 					embed.setColor("#28a745");
 					embed.setDescription(
-						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz ganado **${reward}**`
+						`El resultado es:  \n\n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji}  \n\nHaz ganado **${reward}**`
 					);
 
 					message.channel.send({ embeds: [embed] });
@@ -121,7 +121,7 @@ module.exports = {
 
 					embed.setColor("#28a745");
 					embed.setDescription(
-						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz ganado **${reward}**`
+						`El resultado es: \n\n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji}  \n\nHaz ganado **${reward}**`
 					);
 
 					message.channel.send({ embeds: [embed] });
@@ -129,7 +129,7 @@ module.exports = {
 					//1 SLOTS
 					embed.setColor("#dc3545");
 					embed.setDescription(
-						`El resultado es: \n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji} \nHaz perdido`
+						`El resultado es: \n\n${slotsResult[0].emoji} |  ${slotsResult[1].emoji} |  ${slotsResult[2].emoji}  \n\nHaz perdido`
 					);
 					message.channel.send({ embeds: [embed] });
 				}
