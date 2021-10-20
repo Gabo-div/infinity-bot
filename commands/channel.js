@@ -38,7 +38,7 @@ module.exports = {
 
 			await Server.findOneAndUpdate(
 				{
-					serverId: message.guild.id,
+					serverdId: message.guild.id,
 				},
 				{
 					[`channels.${type}`]: channel.id,

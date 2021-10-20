@@ -24,7 +24,7 @@ const userSchema = new mongoose.Schema({
 		isPremiun: { type: Boolean, default: false },
 		expire: { type: Date, default: null },
 	},
-	bgUrl: {
+	bgURL: {
 		type: String,
 		default:
 			"https://res.cloudinary.com/infinity-bot/image/upload/v1634249773/default_bg.jpg",
