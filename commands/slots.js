@@ -33,19 +33,29 @@ module.exports = {
 
 		let slots = [
 			{
+				name: "banana",
+				emoji: ":banana:",
+				points: 2,
+			},
+			{
+				name: "lemon",
+				emoji: ":lemon:",
+				points: 3,
+			},
+			{
 				name: "blueberries",
 				emoji: ":blueberries:",
-				points: 2,
+				points: 4,
 			},
 			{
 				name: "mango",
 				emoji: ":mango:",
-				points: 3,
+				points: 5,
 			},
 			{
 				name: "grapes",
 				emoji: ":grapes:",
-				points: 5,
+				points: 6,
 			},
 			{
 				name: "tangerine",
@@ -55,17 +65,17 @@ module.exports = {
 			{
 				name: "peach",
 				emoji: ":peach:",
-				points: 10,
+				points: 8,
 			},
 			{
 				name: "bell",
 				emoji: ":bell:",
-				points: 20,
+				points: 9,
 			},
 			{
 				name: "seven",
 				emoji: ":seven:",
-				points: 30,
+				points: 10,
 			},
 		];
 
