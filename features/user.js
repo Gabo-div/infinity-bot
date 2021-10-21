@@ -29,14 +29,14 @@ const createUser = async (author) => {
 				},
 				{
 					discordTag: author.tag,
-					avatar: author.displayAvatarURL(),
+					avatar: author.avatar,
 				}
 			);
 		} else {
 			const newUser = new User({
 				discordId: author.id,
 				discordTag: author.tag,
-				avatar: author.displayAvatarURL(),
+				avatar: author.avatar,
 			});
 
 			await newUser.save();
