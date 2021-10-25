@@ -63,7 +63,7 @@ module.exports = {
 			const font16 = await Jimp.loadFont(Jimp.FONT_SANS_16_WHITE);
 			const font32 = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
 
-			bgOpacity.resize(220, 440);
+			bgOpacity.resize(220, 450);
 			bgOpacity.brightness(-1);
 			bgOpacity.opacity(0.6);
 
