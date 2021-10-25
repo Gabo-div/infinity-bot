@@ -43,7 +43,7 @@ module.exports = {
 			});
 
 			const bgURL =
-				user.bgURL ||
+				user.bgUrl ||
 				"https://res.cloudinary.com/infinity-bot/image/upload/v1634249773/default_bg.jpg";
 
 			if (!user) {

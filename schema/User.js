@@ -52,6 +52,10 @@ const userSchema = new mongoose.Schema({
 			},
 		},
 	],
+	daily: {
+		type: Date,
+		default: 0
+	}
 });
 
 module.exports = mongoose.model("User", userSchema);
