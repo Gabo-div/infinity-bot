@@ -70,7 +70,7 @@ module.exports = {
 			avatarImg.resize(160, 160);
 			avatarImg.circle();
 
-			bg.resize(740, 440);
+			bg.resize(720, 720/1.77);
 			bg.composite(bgOpacity, 0, 0);
 			bg.composite(avatarImg, 25, 20);
 
