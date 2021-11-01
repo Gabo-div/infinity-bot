@@ -1,4 +1,5 @@
 const Discord = require("discord.js")
+
 module.exports = {
 	name: "tictactoe",
 	description: "Juega tic tac toe toe o tres en raya con el bot o un usuario",
@@ -41,7 +42,7 @@ module.exports = {
 		}
 
 		embed.setTitle("Tic Tac Toe");
-		embed.sedDescription(`Jugadores: \n\n${message.author}:x: \n\n${member}`);
+		embed.setDescription(`Jugadores: \n\n${message.author}:x: \n\n${member}`);
 		message.channel.send({embeds: [embed], components: row})
 
 
