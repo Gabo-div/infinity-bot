@@ -93,7 +93,7 @@ module.exports = {
 
 			for(let txt of text) {
 				let result;
-				if(txt === "clear") result = "new";
+				if(txt === "C") result = "new";
 				else if(txt === "=") result = true;
 				else result = false;
 
