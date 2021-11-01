@@ -40,12 +40,12 @@ module.exports = {
 
 			const command = args.shift().toLowerCase();
 
-			const embed = new Discord.MessageEmbed();
-
 			const cmd = client.commands.find(
 				(c) =>
 					c.name === command || (c.alias && c.alias.includes(command))
 			);
+
+			const embed = new Discord.MessageEmbed();
 
 			const cmdAttributes = {
 				args,
@@ -92,6 +92,7 @@ module.exports = {
 			await cmd.execute(cmdAttributes);
 		} catch (error) {
 			console.log(error);
+			const embed = new Discord.MessageEmbed();
 			embed.setTitle("Error");
 			embed.setDescription("Ha ocurrido un error no esperado.");
 			return message.channel.send({ embeds: [embed] });
