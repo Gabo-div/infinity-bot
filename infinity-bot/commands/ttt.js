@@ -42,7 +42,7 @@ module.exports = {
 
 		embed.setTitle("Tic Tac Toe");
 		embed.setColor("#28a745");
-		embed.setDescription(`Jugadores: \n\n${message.author} :x: \n\n${member} :o: `);
+		embed.setDescription(`Jugadores: \n\n${message.author} :x: \n\nRival :o: `);
 		message.channel.send({content:"TTT", components: row}).then(msg => {
 			console.log(msg)
 		})
