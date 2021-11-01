@@ -1,6 +1,4 @@
 const Discord = require("discord.js")
-const math = require("mathjs")
-
 module.exports = {
 	name: "tictactoe",
 	description: "Juega tic tac toe toe o tres en raya con el bot o un usuario",
@@ -36,7 +34,7 @@ module.exports = {
 
 		for(let i = 0; i < 10; i++){
 			if(button[current].length === 3) current++;
-			button[current].push(createButton(text[i]))
+			button[current].push(createButton(":x:"))
 			if(i === 9){
 				for(let btn of button) row.push(addRows(btn));
 			}
@@ -44,7 +42,7 @@ module.exports = {
 
 		embed.setTitle("Tic Tac Toe");
 		embed.sedDescription(`Jugadores: \n\n${message.author}:x: \n\n${member}`);
-		message.channel.send({embeds:[embed], components: row})
+		message.channel.send({embeds: [embed], components: row})
 
 
 
