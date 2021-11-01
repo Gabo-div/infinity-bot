@@ -29,7 +29,6 @@ module.exports = {
 			.setLabel(label)
 			.setStyle(style)
 			.setCustomId("ttt" + label)
-
 			return btn;
 		}
 
@@ -42,8 +41,11 @@ module.exports = {
 		}
 
 		embed.setTitle("Tic Tac Toe");
-		embed.setDescription(`Jugadores: \n\n${message.author}:x: \n\n${member}`);
-		message.channel.send({embeds: [embed], components: row})
+		embed.setColor("#28a745");
+		embed.setDescription(`Jugadores: \n\n${message.author} :x: \n\n${member} :o: `);
+		message.channel.send({content:"TTT", components: row}).then(msg => {
+			console.log(msg)
+		})
 
 
 
