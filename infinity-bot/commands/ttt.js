@@ -2,9 +2,9 @@ const Discord = require("discord.js")
 const math = require("mathjs")
 
 module.exports = {
-	name: "calculator",
-	description: "Habilita una calculadora",
-	alias: ["calc"],
+	name: "tictactoe",
+	description: "Juega tic tac toe toe o tres en raya con el bot o un usuario",
+	alias: ["ttt"],
 	type: "utility",
 	async execute({ message, embed, args }) {
 
