@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const mongoose = require("mongoose");
 const fs = require("fs");
 require("dotenv").config();
-
+require("./slashCommands");
 const intents = new Discord.Intents(32767);
 const client = new Discord.Client({ intents });
 
@@ -22,6 +22,17 @@ for (const file of commandsFiles) {
 	if (file.endsWith(".js")) {
 		const command = require(`./commands/${file}`);
 		client.commands.set(command.name, command);
+	}
+}
+
+//SLASH COMMANDS
+client.slashCommands = new Discord.Collection();
+const slashCommandsFiles = fs.readdirSync("./slash");
+
+for (const file of slashCommandsFiles) {
+	if (file.endsWith(".js")) {
+		const command = require(`./slash/${file}`);
+		client.slashCommands.set(command.data.name, command);
 	}
 }
 
